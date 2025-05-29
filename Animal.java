@@ -1,11 +1,13 @@
 public class Animal {
 
-String nome;
-String especie;
-int id;
-String bioma;
-int idade;
-int fome;
+    String nome;
+    String especie;
+    int id;
+    String bioma;
+    int idade;
+    int fome;
+    static int totalAnimais = 0;
+    static int totalAlimentacoes = 0;
 
 
 
@@ -16,8 +18,21 @@ int fome;
         this.especie = especie;
         this.idade = idade;
         this.fome = fome;
+        totalAnimais++;
     }
 
+    public void Alimentar(){
+        totalAlimentacoes++;
+        System.out.println(nome + " foi alimentado.");
+    }
+
+    public static int getTotalAnimais(){
+        return totalAnimais;
+    }
+
+    public static int getTotalAlimentacoes(){
+        return totalAlimentacoes;
+    }
 
     public void alimentacao(int quantidadeComida){  // metodo para alimentacao dos animas
         if (fome == 0) {
